@@ -1,10 +1,38 @@
 import { Button } from '@/components/ui/button'
+import Header from './components/layout/Header'
+import Footer from './components/layout/Footer'
+import Hero from './sections/Hero'
+import ReviewsVideo from './sections/ReviewsVideo'
+import About from './sections/About'
+import Promo from './sections/Promo'
+import Reviews from './sections/Reviews'
+import ServiceArea from './sections/ServiceArea'
+import License from './sections/License'
+import Services from './sections/Services'
+import Gallery from './sections/Gallery'
+import FaqSection from './sections/FaqSection'
+import Contacts from './sections/Contacts'
 
 function App() {
 	return (
-		<div className='flex min-h-svh flex-col items-center justify-center'>
-			<Button>Click me</Button>
+		<div>
+      <Header />
+			<main>
+        <Hero />
+				<ReviewsVideo />
+				<About />
+				<Promo />
+				<Reviews />
+				<ServiceArea />
+				<License />
+				<Services />
+				<Gallery />
+				<FaqSection />
+				<Contacts />
+			</main>
+			<Footer />
 		</div>
+	
 	)
 }
 
