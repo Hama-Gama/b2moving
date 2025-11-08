@@ -1,7 +1,7 @@
 import SectionTitle from '../components/shared/SectionTitle'
 import Container from '../components/layout/Container'
 import { motion } from 'framer-motion'
-import { Button } from '@/components/ui/button' // shadcn/ui Button
+import { Button } from '@/components/ui/button'
 import YouTube from 'react-youtube'
 
 const Promo = () => {
@@ -11,13 +11,16 @@ const Promo = () => {
 		playerVars: {
 			autoplay: 0,
 			controls: 1,
-			modestbranding: 1,
-			rel: 0,
+			modestbranding: 1, // минимальный брендинг YouTube
+			rel: 0, // не показывать похожие видео
+			showinfo: 0, // скрыть заголовок и канал
+			iv_load_policy: 3, // отключить аннотации
+			origin: window.location.origin,
 		},
 	}
 
 	return (
-		<section id='promo' className='py-10 bg-gray-100'>
+		<section id='promo' className='scroll-mt-24 py-10 bg-gray-100'>
 			<Container>
 				<SectionTitle subtitle='Watch Now' title='Our Company in Action' />
 
@@ -31,7 +34,7 @@ const Promo = () => {
 					{/* Video via React-YouTube */}
 					<div className='w-full md:w-2/3 rounded-lg overflow-hidden shadow-lg aspect-[16/9]'>
 						<YouTube
-							videoId='WChwe50uxjc'
+							videoId='_JNBtHyT5ps'
 							opts={opts}
 							className='w-full h-full'
 						/>
@@ -43,12 +46,6 @@ const Promo = () => {
 							Watch our short video to see how B2Moving makes moving simple,
 							safe, and stress-free.
 						</p>
-						<Button
-							asChild
-							className='bg-blue-600 hover:bg-blue-700 text-white'
-						>
-							<a href='#contacts'>Get a Quote</a>
-						</Button>
 					</div>
 				</motion.div>
 			</Container>

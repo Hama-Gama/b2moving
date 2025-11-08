@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 const Contacts = () => {
 	return (
-		<section id='contacts' className='py-10 bg-white'>
+		<section id='contacts' className='scroll-mt-24 py-10 bg-white'>
 			<Container>
 				{/* Section Title */}
 				<SectionTitle subtitle='Get in Touch' title='Contact Us' />
@@ -30,13 +30,13 @@ const Contacts = () => {
 						}}
 					>
 						<p>
-							<strong>Address:</strong> 123 Main Street, London, UK
+							<strong>Address:</strong> 123 Main Street, San-Francisco, US
 						</p>
 						<p>
-							<strong>Phone:</strong> +44 123 456 789
+							<strong>Phone:</strong> +1 123 456 7895
 						</p>
 						<p>
-							<strong>Email:</strong> info@movepro.com
+							<strong>Email:</strong> b2moving@gmail.com
 						</p>
 						<p>
 							<strong>Working Hours:</strong> Mon - Fri: 9:00 AM - 6:00 PM
@@ -88,7 +88,7 @@ const Contacts = () => {
 							type='submit'
 							className='bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition'
 						>
-							Send Message
+							Send
 						</button>
 					</motion.form>
 				</motion.div>

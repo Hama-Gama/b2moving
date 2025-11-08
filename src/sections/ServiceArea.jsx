@@ -16,7 +16,7 @@ const serviceAreas = [
 
 const ServiceArea = () => {
 	return (
-		<section id='service-area' className='py-10 bg-gray-100'>
+		<section id='service-area' className='scroll-mt-24 py-10 bg-gray-100'>
 			<Container>
 				<SectionTitle subtitle='Coverage' title='Our Service Areas' />
 

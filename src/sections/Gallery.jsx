@@ -1,19 +1,28 @@
 import SectionTitle from '../components/shared/SectionTitle'
 import Container from '../components/layout/Container'
 import { motion } from 'framer-motion'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Parallax, Pagination, EffectCreative } from 'swiper/modules'
+
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/effect-creative'
 
 const images = [
-	'/assets/images/move1.jpg',
-	'/assets/images/move2.jpg',
-	'/assets/images/move3.jpg',
-	'/assets/images/move4.jpg',
-	'/assets/images/move5.jpg',
-	'/assets/images/move6.jpg',
+	'/gallery1.jpg',
+	'/gallery2.jpg',
+	'/gallery3.jpg',
+	'/gallery4.jpg',
+	'/gallery5.jpg',
+	'/gallery6.jpg',
 ]
 
 const Gallery = () => {
 	return (
-		<section id='gallery' className='py-10 bg-gray-100'>
+		<section
+			id='gallery'
+			className='scroll-mt-24 py-10 bg-gray-100 overflow-hidden'
+		>
 			<Container>
 				<SectionTitle
 					subtitle='Our Work'
@@ -21,31 +30,50 @@ const Gallery = () => {
 				/>
 
 				<motion.div
-					className='mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'
-					initial='hidden'
-					whileInView='visible'
-					viewport={{ once: true, amount: 0.3 }}
-					variants={{
-						hidden: {},
-						visible: { transition: { staggerChildren: 0.1 } },
-					}}
+					className='mt-10 relative'
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8 }}
+					viewport={{ once: true }}
 				>
-					{images.map((src, index) => (
-						<motion.div
-							key={index}
-							className='overflow-hidden rounded-lg cursor-pointer shadow-lg hover:scale-105 transition-transform'
-							variants={{
-								hidden: { opacity: 0, y: 20 },
-								visible: { opacity: 1, y: 0 },
-							}}
-						>
-							<img
-								src={src}
-								alt={`Moving moment ${index + 1}`}
-								className='w-full h-48 object-cover'
-							/>
-						</motion.div>
-					))}
+					<Swiper
+						modules={[Parallax, Pagination, EffectCreative]}
+						speed={1000}
+						parallax={true}
+						grabCursor={true}
+						pagination={{ clickable: true }}
+						effect='creative'
+						creativeEffect={{
+							prev: {
+								shadow: true,
+								translate: ['-120%', 0, -500],
+								rotate: [0, 0, -10],
+								scale: 0.8,
+							},
+							next: {
+								translate: ['120%', 0, -500],
+								rotate: [0, 0, 10],
+								scale: 0.8,
+							},
+						}}
+						className='rounded-2xl shadow-xl'
+					>
+						{images.map((src, index) => (
+							<SwiperSlide key={index}>
+								<div
+									className='relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-2xl'
+									data-swiper-parallax='30%'
+								>
+									<img
+										src={src}
+										alt={`Moving moment ${index + 1}`}
+										className='absolute inset-0 w-full h-full object-cover scale-110 transition-transform duration-700 hover:scale-125'
+									/>
+									<div className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent'></div>
+								</div>
+							</SwiperSlide>
+						))}
+					</Swiper>
 				</motion.div>
 			</Container>
 		</section>

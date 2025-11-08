@@ -50,7 +50,7 @@ const ReviewsVideo = () => {
 	}
 
 	return (
-		<section id='reviews-video' className='py-10 bg-gray-50'>
+		<section id='reviews-video' className='scroll-mt-24 py-10 bg-gray-50'>
 			<Container>
 				<SectionTitle subtitle='Video Reviews' title='What Our Clients Say' />
 

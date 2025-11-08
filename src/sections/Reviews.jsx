@@ -8,14 +8,14 @@ const reviews = [
 		name: 'John Smith',
 		role: 'Homeowner',
 		message:
-			'MovePro made my move completely stress-free! The team was professional and handled everything with care.',
+			'B2Moving made my move completely stress-free! The team was professional and handled everything with care.',
 		avatar: '/assets/images/reviewer1.jpg',
 	},
 	{
 		name: 'Emily Johnson',
 		role: 'Office Manager',
 		message:
-			'Our office relocation was smooth and fast thanks to MovePro. Highly recommend their services!',
+			'Our office relocation was smooth and fast thanks to B2Moving. Highly recommend their services!',
 		avatar: '/assets/images/reviewer2.jpg',
 	},
 	{
@@ -29,9 +29,9 @@ const reviews = [
 
 const Reviews = () => {
 	return (
-		<section id='reviews' className='py-10 bg-gray-50'>
+		<section id='reviews' className='scroll-mt-24 py-10 bg-gray-50'>
 			<Container>
-				<SectionTitle subtitle='Testimonials' title='What Our Clients Say' />
+				<SectionTitle subtitle='Reviews' title='What Our Clients Say' />
 
 				<motion.div
 					className='mt-10 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
@@ -58,7 +58,7 @@ const Reviews = () => {
 										alt={review.name}
 										className='w-16 h-16 rounded-full object-cover'
 									/>
-									<p className='text-gray-700 text-sm'>{review.message}</p>
+									<p className='text-gray-700 text-[16px]'>{review.message}</p>
 									<div className='space-y-1'>
 										<h4 className='font-semibold text-gray-900'>
 											{review.name}

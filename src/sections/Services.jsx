@@ -38,7 +38,7 @@ const services = [
 
 const Services = () => {
 	return (
-		<section id='services' className='py-10 bg-white'>
+		<section id='services' className='scroll-mt-24 py-10 bg-white'>
 			<Container>
 				<SectionTitle subtitle='Our Offerings' title='Services We Provide' />
 

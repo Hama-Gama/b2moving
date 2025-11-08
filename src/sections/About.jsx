@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 const About = () => {
 	return (
-		<section id='about' className='py-10 bg-gray-50'>
+		<section id='about' className='scroll-mt-24 py-10 bg-gray-50'>
 			<Container>
 				{/* Section Title */}
 				<SectionTitle subtitle='Who We Are' title='About Our Company' />
@@ -26,14 +26,14 @@ const About = () => {
 				>
 					{/* Text */}
 					<motion.div
-						className='space-y-4 text-gray-700'
+						className='text-[16px] space-y-4 text-gray-700'
 						variants={{
 							hidden: { opacity: 0, y: 20 },
 							visible: { opacity: 1, y: 0 },
 						}}
 					>
 						<p>
-							MovePro is a professional moving company dedicated to providing a
+							B2Moving is a professional moving company dedicated to providing a
 							smooth, stress-free relocation experience for both homes and
 							offices. Our team of experts ensures that your belongings are
 							handled with care from start to finish.
@@ -44,8 +44,8 @@ const About = () => {
 							quick and efficient. Customer satisfaction is our top priority.
 						</p>
 						<p>
-							Whether it’s a small apartment or a large office, MovePro is ready
-							to provide tailored solutions to meet your needs.
+							Whether it’s a small apartment or a large office, B2Moving is
+							ready to provide tailored solutions to meet your needs.
 						</p>
 					</motion.div>
 

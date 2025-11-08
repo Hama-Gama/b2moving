@@ -9,7 +9,7 @@ const Footer = () => {
 				<div className='grid md:grid-cols-3 gap-8'>
 					{/* About / Logo */}
 					<div className='space-y-4'>
-						<h3 className='text-xl font-bold text-white'>MovePro</h3>
+						<h3 className='text-xl font-bold text-white'>B2Moving</h3>
 						<p className='text-gray-400 text-sm'>
 							Professional moving services for homes and offices. We make every
 							move safe and stress-free.
