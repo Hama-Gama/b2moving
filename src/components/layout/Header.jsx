@@ -10,9 +10,8 @@ const Header = () => {
 		{ id: 'services', label: 'Services' },
 		{ id: 'gallery', label: 'Gallery' },
 		{ id: 'license', label: 'License' },
-		{ id: 'promo', label: 'Promo' },
-		{ id: 'reviews', label: 'Reviews' },
-		{ id: 'reviews-video', label: 'Video Reviews' },
+		{ id: 'promo', label: 'Video' },
+		{ id: 'reviews-video', label: 'Reviews' },
 		{ id: 'service-area', label: 'Service Area' },
 		{ id: 'faq', label: 'FAQ' },
 		{ id: 'contacts', label: 'Contacts' },
@@ -32,7 +31,7 @@ const Header = () => {
 				<div className='flex justify-between items-center py-4'>
 					{/* Logo */}
 					<a href='#hero' className='text-2xl font-bold text-gray-900'>
-						MovePro
+						B2Moving
 					</a>
 
 					{/* Desktop Navigation */}

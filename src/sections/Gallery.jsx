@@ -13,7 +13,7 @@ const images = [
 
 const Gallery = () => {
 	return (
-		<section id='gallery' className='py-20 bg-gray-100'>
+		<section id='gallery' className='py-10 bg-gray-100'>
 			<Container>
 				<SectionTitle
 					subtitle='Our Work'

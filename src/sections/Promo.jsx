@@ -2,10 +2,22 @@ import SectionTitle from '../components/shared/SectionTitle'
 import Container from '../components/layout/Container'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button' // shadcn/ui Button
+import YouTube from 'react-youtube'
 
 const Promo = () => {
+	const opts = {
+		width: '100%',
+		height: '100%',
+		playerVars: {
+			autoplay: 0,
+			controls: 1,
+			modestbranding: 1,
+			rel: 0,
+		},
+	}
+
 	return (
-		<section id='promo' className='py-20 bg-gray-100'>
+		<section id='promo' className='py-10 bg-gray-100'>
 			<Container>
 				<SectionTitle subtitle='Watch Now' title='Our Company in Action' />
 
@@ -16,19 +28,19 @@ const Promo = () => {
 					viewport={{ once: true }}
 					transition={{ duration: 0.6 }}
 				>
-					{/* Video */}
-					<div className='w-full md:w-2/3 rounded-lg overflow-hidden shadow-lg'>
-						<video
-							src='/assets/video/company-promo.mp4'
-							controls
-							className='w-full h-auto'
+					{/* Video via React-YouTube */}
+					<div className='w-full md:w-2/3 rounded-lg overflow-hidden shadow-lg aspect-[16/9]'>
+						<YouTube
+							videoId='WChwe50uxjc'
+							opts={opts}
+							className='w-full h-full'
 						/>
 					</div>
 
 					{/* Text and CTA */}
 					<div className='w-full md:w-1/3 flex flex-col items-start space-y-4'>
 						<p className='text-gray-700 text-lg'>
-							Watch our short video to see how MovePro makes moving simple,
+							Watch our short video to see how B2Moving makes moving simple,
 							safe, and stress-free.
 						</p>
 						<Button

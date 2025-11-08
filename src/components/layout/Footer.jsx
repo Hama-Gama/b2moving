@@ -65,7 +65,7 @@ const Footer = () => {
 							</a>
 						</div>
 						<p className='text-gray-400 text-sm'>
-							&copy; {new Date().getFullYear()} MovePro. All rights reserved.
+							&copy; {new Date().getFullYear()} B2Moving. All rights reserved.
 						</p>
 					</div>
 				</div>

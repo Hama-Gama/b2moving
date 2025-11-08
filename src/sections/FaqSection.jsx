@@ -34,7 +34,7 @@ const FaqSection = () => {
 	}
 
 	return (
-		<section id='faq' className='py-20 bg-gray-50'>
+		<section id='faq' className='py-10 bg-gray-50'>
 			<Container>
 				<SectionTitle subtitle='FAQ' title='Frequently Asked Questions' />
 

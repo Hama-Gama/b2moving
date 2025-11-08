@@ -23,7 +23,7 @@ const licenses = [
 
 const License = () => {
 	return (
-		<section id='license' className='py-20 bg-gray-50'>
+		<section id='license' className='py-10 bg-gray-50'>
 			<Container>
 				<SectionTitle
 					subtitle='Certifications'

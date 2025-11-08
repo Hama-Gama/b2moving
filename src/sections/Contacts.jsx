@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 const Contacts = () => {
 	return (
-		<section id='contacts' className='py-20 bg-white'>
+		<section id='contacts' className='py-10 bg-white'>
 			<Container>
 				{/* Section Title */}
 				<SectionTitle subtitle='Get in Touch' title='Contact Us' />

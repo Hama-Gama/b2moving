@@ -29,7 +29,7 @@ const reviews = [
 
 const Reviews = () => {
 	return (
-		<section id='reviews' className='py-20 bg-gray-50'>
+		<section id='reviews' className='py-10 bg-gray-50'>
 			<Container>
 				<SectionTitle subtitle='Testimonials' title='What Our Clients Say' />
 
