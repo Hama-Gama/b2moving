@@ -2,7 +2,7 @@ import SectionTitle from '../components/shared/SectionTitle'
 import Container from '../components/layout/Container'
 import { motion } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Parallax, Pagination, EffectCreative } from 'swiper/modules'
+import { Autoplay, Parallax, EffectCreative } from 'swiper/modules'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -37,12 +37,12 @@ const Gallery = () => {
 					viewport={{ once: true }}
 				>
 					<Swiper
-						modules={[Parallax, Pagination, EffectCreative]}
+						modules={[Autoplay, Parallax, EffectCreative]}
 						speed={1000}
 						parallax={true}
 						grabCursor={true}
-						pagination={{ clickable: true }}
 						effect='creative'
+						autoplay={{ delay: 1500, disableOnInteraction: true }}
 						creativeEffect={{
 							prev: {
 								shadow: true,

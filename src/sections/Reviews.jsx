@@ -1,74 +1,127 @@
 import SectionTitle from '../components/shared/SectionTitle'
 import Container from '../components/layout/Container'
 import { motion } from 'framer-motion'
-import { Card, CardContent } from '@/components/ui/card' // shadcn/ui Card
+import { Card, CardContent } from '@/components/ui/card'
+import { Star } from 'lucide-react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, EffectCube } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/effect-cube'
 
+// Данные отзывов
 const reviews = [
 	{
 		name: 'John Smith',
 		role: 'Homeowner',
 		message:
 			'B2Moving made my move completely stress-free! The team was professional and handled everything with care.',
-		avatar: '/assets/images/reviewer1.jpg',
+		avatar: '/review-1.jpg',
+		rating: 4.9,
 	},
 	{
 		name: 'Emily Johnson',
 		role: 'Office Manager',
 		message:
 			'Our office relocation was smooth and fast thanks to B2Moving. Highly recommend their services!',
-		avatar: '/assets/images/reviewer2.jpg',
+		avatar: '/review-2.jpg',
+		rating: 5.0,
 	},
 	{
 		name: 'Michael Brown',
 		role: 'Entrepreneur',
 		message:
 			'Great team, punctual and efficient. They handled all our items carefully and professionally.',
-		avatar: '/assets/images/reviewer3.jpg',
+		avatar: '/review-1.jpg',
+		rating: 4.8,
+	},
+	{
+		name: 'Sarah Lee',
+		role: 'Interior Designer',
+		message:
+			'They made my moving experience feel effortless. Excellent coordination and support throughout!',
+		avatar: '/review-2.jpg',
+		rating: 4.9,
 	},
 ]
 
 const Reviews = () => {
 	return (
-		<section id='reviews' className='scroll-mt-24 py-10 bg-gray-50'>
+		<section id='reviews' className='scroll-mt-24 py-20 bg-gray-50'>
 			<Container>
 				<SectionTitle subtitle='Reviews' title='What Our Clients Say' />
 
 				<motion.div
-					className='mt-10 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
-					initial='hidden'
-					whileInView='visible'
-					viewport={{ once: true, amount: 0.3 }}
-					variants={{
-						hidden: {},
-						visible: { transition: { staggerChildren: 0.2 } },
-					}}
+					className='mt-10 max-w-2xl mx-auto'
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6 }}
 				>
-					{reviews.map((review, index) => (
-						<motion.div
-							key={index}
-							variants={{
-								hidden: { opacity: 0, y: 20 },
-								visible: { opacity: 1, y: 0 },
-							}}
-						>
-							<Card className='h-full hover:shadow-lg transition'>
-								<CardContent className='flex flex-col items-center text-center space-y-4'>
-									<img
-										src={review.avatar}
-										alt={review.name}
-										className='w-16 h-16 rounded-full object-cover'
-									/>
-									<p className='text-gray-700 text-[16px]'>{review.message}</p>
-									<div className='space-y-1'>
-										<h4 className='font-semibold text-gray-900'>
-											{review.name}
-										</h4>
-										<p className='text-gray-500 text-sm'>{review.role}</p>
-									</div>
-								</CardContent>
-							</Card>
-						</motion.div>
-					))}
+					<Swiper
+						modules={[ Autoplay, EffectCube]}
+						effect='cube'
+						grabCursor={true}
+						cubeEffect={{
+							shadow: true,
+							slideShadows: true,
+							shadowOffset: 20,
+							shadowScale: 0.94,
+						}}
+						autoplay={{ delay: 2000, disableOnInteraction: true }}
+						className='max-w-md mx-auto'
+					>
+						{reviews.map((review, index) => (
+							<SwiperSlide key={index}>
+								<motion.div
+									whileHover={{ scale: 1.02 }}
+									transition={{ type: 'spring', stiffness: 120 }}
+								>
+									<Card className='h-full p-6 bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 rounded-2xl pb-10'>
+										<CardContent className='flex flex-col items-center text-center space-y-4'>
+											{/* Аватар */}
+											<img
+												src={review.avatar}
+												alt={review.name}
+												className='w-20 h-20 rounded-full object-cover shadow-md'
+											/>
+
+											{/* Текст отзыва */}
+											<p className='text-gray-700 text-[15px] leading-relaxed italic'>
+												“{review.message}”
+											</p>
+
+											{/* Имя и должность */}
+											<div className='space-y-1'>
+												<h4 className='font-semibold text-gray-900'>
+													{review.name}
+												</h4>
+												<p className='text-gray-500 text-sm'>{review.role}</p>
+											</div>
+
+											{/* Рейтинг */}
+											<div className='flex items-center justify-center gap-1'>
+												{[...Array(5)].map((_, i) => (
+													<Star
+														key={i}
+														size={18}
+														className={
+															i < Math.round(review.rating)
+																? 'text-yellow-400 fill-yellow-400'
+																: 'text-gray-300'
+														}
+													/>
+												))}
+												<span className='ml-2 text-sm text-gray-600 font-medium'>
+													{review.rating.toFixed(1)}
+												</span>
+											</div>
+										</CardContent>
+									</Card>
+								</motion.div>
+							</SwiperSlide>
+						))}
+					</Swiper>
 				</motion.div>
 			</Container>
 		</section>

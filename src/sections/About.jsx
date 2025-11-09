@@ -26,24 +26,24 @@ const About = () => {
 				>
 					{/* Text */}
 					<motion.div
-						className='text-[16px] space-y-4 text-gray-700'
+						className='space-y-4 text-gray-700'
 						variants={{
 							hidden: { opacity: 0, y: 20 },
 							visible: { opacity: 1, y: 0 },
 						}}
 					>
-						<p>
+						<p className='text-base'>
 							B2Moving is a professional moving company dedicated to providing a
 							smooth, stress-free relocation experience for both homes and
 							offices. Our team of experts ensures that your belongings are
 							handled with care from start to finish.
 						</p>
-						<p>
+						<p className='text-base'>
 							With years of experience, we take pride in offering reliable
 							services, modern equipment, and skilled staff to make your move
 							quick and efficient. Customer satisfaction is our top priority.
 						</p>
-						<p>
+						<p className='text-base'>
 							Whether it’s a small apartment or a large office, B2Moving is
 							ready to provide tailored solutions to meet your needs.
 						</p>
@@ -58,7 +58,7 @@ const About = () => {
 						}}
 					>
 						<img
-							src='/assets/images/about-image.jpg'
+							src='/gallery5.jpg'
 							alt='About MovePro'
 							className='rounded-lg shadow-lg max-w-full h-auto'
 						/>

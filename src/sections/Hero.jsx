@@ -47,7 +47,7 @@ const Hero = () => {
 						className='w-full flex justify-center md:justify-end'
 					>
 						<img
-							src='/assets/images/hero-image.jpg'
+							src='/gallery1.jpg'
 							alt='Professional movers in action'
 							className='rounded-lg shadow-xl max-w-full h-auto'
 						/>

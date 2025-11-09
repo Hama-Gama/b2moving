@@ -61,7 +61,7 @@ const Header = () => {
 								<button
 									key={link.id}
 									onClick={() => handleNavClick(link.id)}
-									className='text-gray-700 hover:text-blue-600 transition text-left'
+									className='text-gray-700 text-2xl hover:text-blue-600 transition text-center mb-6'
 								>
 									{link.label}
 								</button>

@@ -70,8 +70,8 @@ const ReviewsVideo = () => {
 						pagination={{ clickable: true }}
 						breakpoints={{
 							640: { slidesPerView: 1.5 },
-							768: { slidesPerView: 2 },
-							1024: { slidesPerView: 3 },
+							768: { slidesPerView: 2.5 },
+							1024: { slidesPerView: 3.5 },
 						}}
 					>
 						{reviewsVideoData.map((item, index) => (
