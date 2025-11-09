@@ -12,6 +12,7 @@ import Services from './sections/Services'
 import Gallery from './sections/Gallery'
 import FaqSection from './sections/FaqSection'
 import Contacts from './sections/Contacts'
+import FloatingQuoteButton from './components/layout/FloatingQuoteButton'
 
 function App() {
 	return (
@@ -31,6 +32,7 @@ function App() {
 				<Contacts />
 			</main>
 			<Footer />
+			<FloatingQuoteButton />
 		</div>
 	
 	)
