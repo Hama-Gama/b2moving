@@ -66,22 +66,22 @@ const ReviewsVideo = () => {
 					<Swiper
 						modules={[Pagination]}
 						spaceBetween={16}
-						slidesPerView={1.2}
+						slidesPerView={1.5}
 						pagination={{ clickable: true }}
 						breakpoints={{
-							640: { slidesPerView: 1.5 },
-							768: { slidesPerView: 2.5 },
-							1024: { slidesPerView: 3.5 },
+							640: { slidesPerView: 2.5 },
+							768: { slidesPerView: 3.5 },
+							1024: { slidesPerView: 5 },
 						}}
 					>
 						{reviewsVideoData.map((item, index) => (
 							<SwiperSlide key={index}>
-								<Card className='hover:shadow-xl transition mb-10'>
+								<Card className='hover:shadow-xl transition mb-10 max-w-[300px]'>
 									<CardContent className='flex flex-col justify-between items-center p-1.5 text-center'>
 										{/* Видео YouTube */}
 										<motion.div
 											whileHover={{ scale: 1.02 }}
-											className='w-full aspect-[9/16] overflow-hidden rounded-xl border-2 border-blue-500 shadow-lg'
+											className='w-full aspect-[9/16] overflow-hidden rounded-xl border-2 border-blue-200 shadow-lg'
 										>
 											<YouTube
 												videoId={item.video}

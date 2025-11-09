@@ -1,12 +1,12 @@
 import SectionTitle from '../components/shared/SectionTitle'
 import Container from '../components/layout/Container'
 import { motion } from 'framer-motion'
+import { Send } from 'lucide-react'
 
 const Contacts = () => {
 	return (
 		<section id='contacts' className='scroll-mt-24 py-10 bg-white'>
 			<Container>
-				{/* Section Title */}
 				<SectionTitle subtitle='Get in Touch' title='Contact Us' />
 
 				<motion.div
@@ -16,12 +16,10 @@ const Contacts = () => {
 					viewport={{ once: true, amount: 0.3 }}
 					variants={{
 						hidden: {},
-						visible: {
-							transition: { staggerChildren: 0.2 },
-						},
+						visible: { transition: { staggerChildren: 0.2 } },
 					}}
 				>
-					{/* Contact Information */}
+					{/* Contact Info */}
 					<motion.div
 						className='space-y-4 text-gray-700'
 						variants={{
@@ -30,7 +28,7 @@ const Contacts = () => {
 						}}
 					>
 						<p>
-							<strong>Address:</strong> 123 Main Street, San-Francisco, US
+							<strong>Address:</strong> 123 Main Street, San Francisco, US
 						</p>
 						<p>
 							<strong>Phone:</strong> +1 123 456 7895
@@ -84,12 +82,19 @@ const Contacts = () => {
 								required
 							/>
 						</div>
-						<button
+
+						{/* 🔥 Stylish Send Button */}
+						<motion.button
 							type='submit'
-							className='bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition'
+							whileHover={{ scale: 1.05 }}
+							whileTap={{ scale: 0.95 }}
+							transition={{ type: 'spring', stiffness: 250, damping: 15 }}
+							className='group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-semibold text-white rounded-md shadow-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400'
 						>
-							Send
-						</button>
+							<span className='absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300'></span>
+							<Send className='w-5 h-5 mr-2' />
+							Send Message
+						</motion.button>
 					</motion.form>
 				</motion.div>
 			</Container>
