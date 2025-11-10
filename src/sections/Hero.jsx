@@ -20,9 +20,10 @@ const Hero = () => {
 						transition={{ duration: 0.8 }}
 						className='space-y-6 text-white'
 					>
-						<h1 className='text-6xl md:text-5xl font-extrabold leading-tight drop-shadow-lg'>
+						<h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg'>
 							STRESS-FREE MOVING SOLUTIONS
 						</h1>
+
 						<p className='text-lg md:text-xl text-gray-200'>
 							B2Moving makes your relocation fast, safe, and hassle-free.
 							Trusted by families and businesses alike.
@@ -30,13 +31,13 @@ const Hero = () => {
 						<div className='flex flex-col sm:flex-row gap-4 w-full sm:w-auto'>
 							<a
 								href='#contacts'
-								className='flex-1 text-center bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition font-bold text-2xl tracking-wider'
+								className='flex-1 text-center bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition font-bold text-xl sm:text-xl tracking-wider'
 							>
 								Get a Quote
 							</a>
 							<a
 								href='#services'
-								className='flex-1 text-center bg-white/20 text-white px-6 py-3 rounded-md hover:bg-white/30 transition font-bold text-2xl tracking-wider'
+								className='flex-1 text-center bg-white/20 text-white px-6 py-3 rounded-md hover:bg-white/30 transition font-bold text-xl sm:text-xl  tracking-wider'
 							>
 								Our Services
 							</a>
