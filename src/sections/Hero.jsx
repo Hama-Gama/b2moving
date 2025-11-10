@@ -28,16 +28,16 @@ const Hero = () => {
 							B2Moving makes your relocation fast, safe, and hassle-free.
 							Trusted by families and businesses alike.
 						</p>
-						<div className='flex flex-col sm:flex-row gap-4 w-full sm:w-auto'>
+						<div className='grid grid-cols-2 gap-4 w-full sm:w-auto'>
 							<a
 								href='#contacts'
-								className='flex-1 text-center bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition font-bold text-xl sm:text-xl tracking-wider'
+								className='text-center bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition font-bold text-lg tracking-wider w-full'
 							>
 								Get a Quote
 							</a>
 							<a
 								href='#services'
-								className='flex-1 text-center bg-white/20 text-white px-6 py-3 rounded-md hover:bg-white/30 transition font-bold text-xl sm:text-xl  tracking-wider'
+								className='text-center bg-white/20 text-white px-6 py-3 rounded-md hover:bg-white/30 transition font-bold text-lg tracking-wider w-full'
 							>
 								Our Services
 							</a>
