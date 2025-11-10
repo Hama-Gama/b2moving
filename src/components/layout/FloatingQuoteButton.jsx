@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'motion/react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 
 const FloatingQuoteButton = () => {
@@ -13,7 +13,6 @@ const FloatingQuoteButton = () => {
 
 		const observer = new IntersectionObserver(
 			([entry]) => {
-				// Если hero видим хотя бы на 30% — скрываем кнопку
 				setVisible(!entry.isIntersecting)
 			},
 			{ threshold: 0.3 }
@@ -31,14 +30,14 @@ const FloatingQuoteButton = () => {
 					animate={{ opacity: 1, y: 0 }}
 					exit={{ opacity: 0, y: 80 }}
 					transition={{ type: 'spring', stiffness: 120, damping: 15 }}
-					className='fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50'
+					className='fixed bottom-0 left-0 w-full sm:bottom-6 sm:left-1/2 sm:-translate-x-1/2 sm:w-auto z-50 px-4 sm:px-0'
 				>
 					<Button
 						asChild
 						size='lg'
-						className='bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg px-8 py-5 flex items-center gap-3 font-bold text-lg'
+						className='w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-black tracking-wide text-lg py-6 sm:py-5 rounded-none sm:rounded-full shadow-xl transition-all duration-300 active:scale-[0.98]'
 					>
-						<a href='#contacts' className='flex items-center gap-2 tracking-wider font-black'>
+						<a href='#contacts' className='block text-center'>
 							GET A QUOTE
 						</a>
 					</Button>
