@@ -5,10 +5,10 @@ const Hero = () => {
 	return (
 		<section
 			id='hero'
-			className='relative min-h-screen flex items-center bg-cover bg-center bg-no-repeat'
+			className='relative h-[100dvh] flex items-center bg-cover bg-center bg-no-repeat overflow-hidden'
 			style={{ backgroundImage: "url('/hero-image.jpg')" }}
 		>
-			{/* затемнение фона для читаемости текста */}
+			{/* Затемнение фона для читаемости текста */}
 			<div className='absolute inset-0 bg-black/40'></div>
 
 			<Container>
@@ -20,7 +20,7 @@ const Hero = () => {
 						transition={{ duration: 0.8 }}
 						className='space-y-6 text-white'
 					>
-						<h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg'>
+						<h1 className='text-[36px] md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg'>
 							STRESS-FREE MOVING SOLUTIONS
 						</h1>
 
@@ -28,6 +28,7 @@ const Hero = () => {
 							B2Moving makes your relocation fast, safe, and hassle-free.
 							Trusted by families and businesses alike.
 						</p>
+
 						<div className='grid grid-cols-2 gap-4 w-full sm:w-auto'>
 							<a
 								href='#contacts'
@@ -44,7 +45,7 @@ const Hero = () => {
 						</div>
 					</motion.div>
 
-					{/* Optionally — пустой блок справа для визуального баланса */}
+					{/* Пустой блок справа для симметрии */}
 					<div className='hidden md:block'></div>
 				</div>
 			</Container>
