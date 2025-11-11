@@ -83,13 +83,13 @@ const Header = () => {
 
 				{/* Mobile Menu */}
 				{isOpen && (
-					<div className='md:hidden bg-white shadow-md rounded-b-lg mt-2'>
-						<nav className='flex flex-col space-y-2 p-4'>
+					<div className='md:hidden bg-white shadow-md rounded-lg mt-2 p-6'>
+						<nav className='flex flex-col space-y-4 p-4'>
 							{navLinks.map(link => (
 								<button
 									key={link.id}
 									onClick={() => handleNavClick(link.id)}
-									className='text-gray-700 text-2xl hover:text-blue-600 transition text-center mb-6'
+									className='text-gray-700 text-2xl font-bold hover:text-blue-600 transition text-center mb-6 last:mb-0 tracking-wider'
 								>
 									{link.label}
 								</button>

@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import YouTube from 'react-youtube'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper/modules'
+import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
@@ -26,13 +26,13 @@ const reviewsVideoData = [
 		video: '_SzC8GJ72Mw',
 	},
 	{
-		name: 'Emily Johnson',
-		instagram: '@emilyoffice',
+		name: 'Sarah Lee',
+		instagram: '@sarahlee',
 		video: 'hmrsGZErbyw',
 	},
 	{
-		name: 'Michael Brown',
-		instagram: '@michaelbiz',
+		name: 'David Kim',
+		instagram: '@davidkim',
 		video: 'p1Ofp2fDDwE',
 	},
 ]
@@ -64,10 +64,11 @@ const ReviewsVideo = () => {
 					}}
 				>
 					<Swiper
-						modules={[Pagination]}
+						modules={[Pagination, Autoplay]}
 						spaceBetween={16}
 						slidesPerView={1.5}
 						pagination={{ clickable: true }}
+						autoplay={{ delay: 2000, disableOnInteraction: true }}
 						breakpoints={{
 							640: { slidesPerView: 2.5 },
 							768: { slidesPerView: 3.5 },
@@ -76,22 +77,24 @@ const ReviewsVideo = () => {
 					>
 						{reviewsVideoData.map((item, index) => (
 							<SwiperSlide key={index}>
-								<Card className='hover:shadow-xl transition mb-10 max-w-[300px]'>
-									<CardContent className='flex flex-col justify-between items-center p-1.5 text-center'>
-										{/* Видео YouTube */}
+								<Card className='hover:shadow-xl transition mb-10 max-w-[300px] p-2'>
+									<CardContent className='flex flex-col justify-between items-center text-center p-0'>
+										{/* Видео контейнер с pointer-events */}
 										<motion.div
 											whileHover={{ scale: 1.02 }}
-											className='w-full aspect-[9/16] overflow-hidden rounded-xl border-2 border-blue-200 shadow-lg'
+											className='w-full aspect-[9/16] overflow-hidden rounded-xl border-2 border-blue-200 shadow-lg relative'
 										>
-											<YouTube
-												videoId={item.video}
-												opts={opts}
-												className='w-full h-full'
-											/>
+											<div className='absolute inset-0 pointer-events-none hover:pointer-events-auto'>
+												<YouTube
+													videoId={item.video}
+													opts={opts}
+													className='w-full h-full'
+												/>
+											</div>
 										</motion.div>
 
 										{/* Имя и Instagram снизу */}
-										<div className='mt-6 text-center'>
+										<div className='mt-4 text-center'>
 											<h4 className='font-semibold text-gray-900'>
 												{item.name}
 											</h4>

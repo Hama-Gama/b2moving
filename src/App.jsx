@@ -13,6 +13,7 @@ import Gallery from './sections/Gallery'
 import FaqSection from './sections/FaqSection'
 import Contacts from './sections/Contacts'
 import FloatingQuoteButton from './components/layout/FloatingQuoteButton'
+import BrandCarousel from './sections/BrandCarousel'
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
       <Header />
 			<main>
         <Hero />
+				<BrandCarousel />
 				<ReviewsVideo />
 				<About />
 				<Promo />
