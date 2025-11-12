@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Sling as Hamburger } from 'hamburger-react'
+import { motion } from 'framer-motion'
 import Container from './Container'
 
 const Header = () => {
@@ -43,15 +44,24 @@ const Header = () => {
 		>
 			<Container>
 				<div className='flex justify-between items-center py-4'>
-					{/* Logo */}
-					<a
+					{/* АНИМИРОВАННЫЙ ЛОГО */}
+					<motion.a
 						href='#hero'
+						initial={{ opacity: 0, y: -20, scale: 0.8 }}
+						animate={{ opacity: 1, y: 0, scale: 1 }}
+						transition={{
+							duration: 0.8,
+							ease: 'easeOut',
+							delay: 0.2,
+							type: 'spring',
+							stiffness: 100,
+						}}
 						className={`text-3xl font-black tracking-wider transition-all duration-300 ${
 							isScrolled ? 'text-gray-900' : 'text-white drop-shadow-lg'
 						}`}
 					>
 						B2Moving
-					</a>
+					</motion.a>
 
 					{/* Desktop Navigation */}
 					<nav className='hidden md:flex space-x-6'>
@@ -76,7 +86,7 @@ const Header = () => {
 							toggled={isOpen}
 							toggle={setIsOpen}
 							size={24}
-							color={isScrolled ? '#1f2937' : '#ffffff'} // белый при прозрачном фоне, тёмный при белом
+							color={isScrolled ? '#1f2937' : '#ffffff'}
 						/>
 					</div>
 				</div>

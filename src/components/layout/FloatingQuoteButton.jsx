@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 
-const FloatingQuoteButton = () => {
+const FloatingQuoteButton = ({ onOpen }) => {
 	const [visible, setVisible] = useState(false)
 
 	useEffect(() => {
@@ -33,13 +33,11 @@ const FloatingQuoteButton = () => {
 					className='fixed bottom-5 left-0 w-full sm:bottom-6 sm:left-1/2 sm:-translate-x-1/2 sm:w-auto z-50 px-4 sm:px-0'
 				>
 					<Button
-						asChild
+						onClick={onOpen} // ← событие должно быть здесь!
 						size='lg'
-						className='w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-black tracking-wide text-lg py-6 sm:py-5 rounded-lg sm:rounded-full shadow-xl transition-all duration-300 active:scale-[0.98]'
+						className='w-full sm:w-auto bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-black tracking-wide text-lg py-6 sm:py-5 rounded-lg sm:rounded-full shadow-xl transition-all duration-300 active:scale-[0.98]'
 					>
-						<a href='#contacts' className='block text-center'>
-							GET A QUOTE
-						</a>
+						<button className='block text-center'>GET A FREE QUOTE</button>
 					</Button>
 				</motion.div>
 			)}

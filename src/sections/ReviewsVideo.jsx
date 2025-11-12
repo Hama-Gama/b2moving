@@ -1,3 +1,6 @@
+'use client'
+
+import { useState, useEffect, useRef } from 'react'
 import SectionTitle from '../components/shared/SectionTitle'
 import Container from '../components/layout/Container'
 import { motion } from 'framer-motion'
@@ -10,31 +13,11 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 
 const reviewsVideoData = [
-	{
-		name: 'John Smith',
-		instagram: '@johnsmith',
-		video: 'I2LTfVxEAZc',
-	},
-	{
-		name: 'Emily Johnson',
-		instagram: '@emilyoffice',
-		video: 'lSfof4_MFLA',
-	},
-	{
-		name: 'Michael Brown',
-		instagram: '@michaelbiz',
-		video: '_SzC8GJ72Mw',
-	},
-	{
-		name: 'Sarah Lee',
-		instagram: '@sarahlee',
-		video: 'hmrsGZErbyw',
-	},
-	{
-		name: 'David Kim',
-		instagram: '@davidkim',
-		video: 'p1Ofp2fDDwE',
-	},
+	{ name: 'John Smith', instagram: '@johnsmith', video: 'I2LTfVxEAZc' },
+	{ name: 'Emily Johnson', instagram: '@emilyoffice', video: 'lSfof4_MFLA' },
+	{ name: 'Michael Brown', instagram: '@michaelbiz', video: '_SzC8GJ72Mw' },
+	{ name: 'Sarah Lee', instagram: '@sarahlee', video: 'hmrsGZErbyw' },
+	{ name: 'David Kim', instagram: '@davidkim', video: 'p1Ofp2fDDwE' },
 ]
 
 const ReviewsVideo = () => {
@@ -49,8 +32,42 @@ const ReviewsVideo = () => {
 		},
 	}
 
+	const swiperRef = useRef(null)
+	const sectionRef = useRef(null)
+	const [isVisible, setIsVisible] = useState(false)
+
+	// Отслеживаем видимость секции
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				setIsVisible(entry.isIntersecting && entry.intersectionRatio === 1)
+			},
+			{ threshold: 1.0 } // полностью видимая секция
+		)
+
+		if (sectionRef.current) observer.observe(sectionRef.current)
+		return () => observer.disconnect()
+	}, [])
+
+	// Управляем автоплеем Swiper
+	useEffect(() => {
+		if (!swiperRef.current) return
+		const swiperInstance = swiperRef.current.swiper
+		if (!swiperInstance?.autoplay) return
+
+		if (isVisible) {
+			swiperInstance.autoplay.start()
+		} else {
+			swiperInstance.autoplay.stop()
+		}
+	}, [isVisible])
+
 	return (
-		<section id='reviews-video' className='scroll-mt-24 py-10 bg-gray-50'>
+		<section
+			ref={sectionRef}
+			id='reviews-video'
+			className='scroll-mt-24 py-10 bg-gray-50'
+		>
 			<Container>
 				<SectionTitle subtitle='Video Reviews' title='What Our Clients Say' />
 
@@ -64,11 +81,16 @@ const ReviewsVideo = () => {
 					}}
 				>
 					<Swiper
+						ref={swiperRef}
 						modules={[Pagination, Autoplay]}
 						spaceBetween={16}
 						slidesPerView={1.5}
 						pagination={{ clickable: true }}
-						autoplay={{ delay: 2000, disableOnInteraction: true }}
+						autoplay={{
+							delay: 2000,
+							disableOnInteraction: true,
+							pauseOnMouseEnter: true,
+						}}
 						breakpoints={{
 							640: { slidesPerView: 2.5 },
 							768: { slidesPerView: 3.5 },
@@ -77,41 +99,50 @@ const ReviewsVideo = () => {
 					>
 						{reviewsVideoData.map((item, index) => (
 							<SwiperSlide key={index}>
-								<Card className='hover:shadow-xl transition mb-10 max-w-[300px] p-2'>
-									<CardContent className='flex flex-col justify-between items-center text-center p-0'>
-										{/* Видео контейнер с pointer-events */}
-										<motion.div
-											whileHover={{ scale: 1.02 }}
-											className='w-full aspect-[9/16] overflow-hidden rounded-xl border-2 border-blue-200 shadow-lg relative'
-										>
-											<div className='absolute inset-0 pointer-events-none hover:pointer-events-auto'>
-												<YouTube
-													videoId={item.video}
-													opts={opts}
-													className='w-full h-full'
-												/>
-											</div>
-										</motion.div>
-
-										{/* Имя и Instagram снизу */}
-										<div className='mt-4 text-center'>
-											<h4 className='font-semibold text-gray-900'>
-												{item.name}
-											</h4>
-											<a
-												href={`https://instagram.com/${item.instagram.replace(
-													'@',
-													''
-												)}`}
-												target='_blank'
-												rel='noopener noreferrer'
-												className='text-blue-500 text-sm hover:underline'
+								<motion.div
+									initial={{ opacity: 0, y: 40, scale: 0.95 }}
+									whileInView={{ opacity: 1, y: 0, scale: 1 }}
+									transition={{
+										duration: 0.6,
+										ease: 'easeOut',
+										delay: index * 0.2,
+									}}
+									viewport={{ once: true }}
+								>
+									<Card className='hover:shadow-xl transition mb-10 max-w-[300px] p-2'>
+										<CardContent className='flex flex-col justify-between items-center text-center p-0'>
+											<motion.div
+												whileHover={{ scale: 1.02 }}
+												className='w-full aspect-[9/16] overflow-hidden rounded-xl border-2 border-blue-200 shadow-lg relative'
 											>
-												{item.instagram}
-											</a>
-										</div>
-									</CardContent>
-								</Card>
+												<div className='absolute inset-0 pointer-events-none hover:pointer-events-auto'>
+													<YouTube
+														videoId={item.video}
+														opts={opts}
+														className='w-full h-full'
+													/>
+												</div>
+											</motion.div>
+
+											<div className='mt-4 text-center'>
+												<h4 className='font-semibold text-gray-900'>
+													{item.name}
+												</h4>
+												<a
+													href={`https://instagram.com/${item.instagram.replace(
+														'@',
+														''
+													)}`}
+													target='_blank'
+													rel='noopener noreferrer'
+													className='text-blue-500 text-sm hover:underline'
+												>
+													{item.instagram}
+												</a>
+											</div>
+										</CardContent>
+									</Card>
+								</motion.div>
 							</SwiperSlide>
 						))}
 					</Swiper>

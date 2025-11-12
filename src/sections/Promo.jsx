@@ -41,8 +41,8 @@ const Promo = () => {
 					</div>
 
 					{/* Text and CTA */}
-					<div className='w-full md:w-1/3 flex flex-col items-start space-y-4'>
-						<p className='text-gray-700 text-lg'>
+					<div className='w-full md:w-1/3 flex flex-col items-center md:items-start space-y-4 text-center md:text-left'>
+						<p className='text-gray-700 text-lg font-semibold'>
 							Watch our short video to see how B2Moving makes moving simple,
 							safe, and stress-free.
 						</p>

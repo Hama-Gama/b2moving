@@ -3,79 +3,20 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Container from '../components/layout/Container'
+import FloatingQuoteButton from '../components/layout/FloatingQuoteButton'
+import QuoteModal from '../components/layout/QuoteModal'
 
-const QuoteModal = ({ isOpen, onClose }) => {
-	return (
-		<>
-			{isOpen && (
-				<>
-					{/* Фон */}
-					<div
-						className='fixed inset-0 bg-black/50 z-40'
-						onClick={onClose}
-					></div>
-
-					{/* Модалка */}
-					<div className='fixed top-1/2 left-1/2 z-50 w-11/12 max-w-lg -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg p-6'>
-						<h2 className='text-2xl font-bold mb-4'>Get a Quote</h2>
-						<form className='space-y-4'>
-							<input
-								type='text'
-								placeholder='Full Name'
-								className='w-full border rounded-md px-3 py-2'
-								required
-							/>
-							<input
-								type='email'
-								placeholder='Email'
-								className='w-full border rounded-md px-3 py-2'
-								required
-							/>
-							<input
-								type='tel'
-								placeholder='Phone'
-								className='w-full border rounded-md px-3 py-2'
-								required
-							/>
-							<input
-								type='date'
-								placeholder='Move Date'
-								className='w-full border rounded-md px-3 py-2'
-								required
-							/>
-							<div className='grid grid-cols-2 gap-2'>
-								<input
-									type='text'
-									placeholder='Pick Up Zip'
-									className='w-full border rounded-md px-3 py-2'
-									required
-								/>
-								<input
-									type='text'
-									placeholder='Drop Off Zip'
-									className='w-full border rounded-md px-3 py-2'
-									required
-								/>
-							</div>
-							<select className='w-full border rounded-md px-3 py-2' required>
-								<option value=''>Select your move size</option>
-								<option value='studio'>Studio / 1 Bedroom</option>
-								<option value='2bed'>2 Bedrooms</option>
-								<option value='3bed'>3 Bedrooms</option>
-								<option value='4plus'>4+ Bedrooms</option>
-							</select>
-							<button
-								type='submit'
-								className='w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition font-bold'
-							>
-								Get a Quote Now
-							</button>
-						</form>
-					</div>
-				</>
-			)}
-		</>
-	)
+const textVariant = {
+	hidden: { opacity: 0, y: 30 },
+	visible: (i = 1) => ({
+		opacity: 1,
+		y: 0,
+		transition: {
+			delay: i * 0.2,
+			duration: 0.8,
+			ease: 'easeOut',
+		},
+	}),
 }
 
 const Hero = () => {
@@ -91,23 +32,45 @@ const Hero = () => {
 
 			<Container>
 				<div className='relative z-10 grid md:grid-cols-2 gap-8 items-center pt-24 md:pt-32'>
-					<motion.div
-						initial={{ opacity: 0, x: -50 }}
-						animate={{ opacity: 1, x: 0 }}
-						transition={{ duration: 0.8 }}
-						className='space-y-6 text-white'
-					>
-						<h1 className='text-[36px] md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg'>
-							STRESS-FREE MOVING SOLUTIONS
-						</h1>
+					<div className='space-y-6 text-white'>
+						{/* Заголовок */}
+						<motion.h1
+							variants={textVariant}
+							initial='hidden'
+							animate='visible'
+							custom={1}
+							className='text-[36px] md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg'
+						>
+							STRESS-FREE <br />
+							<motion.span
+								variants={textVariant}
+								custom={2}
+								className='text-white'
+							>
+								MOVING SOLUTIONS
+							</motion.span>
+						</motion.h1>
 
-						<p className='text-lg md:text-xl text-gray-200'>
+						{/* Подзаголовок */}
+						<motion.p
+							variants={textVariant}
+							initial='hidden'
+							animate='visible'
+							custom={3}
+							className='text-lg md:text-xl text-gray-200 max-w-md'
+						>
 							B2Moving makes your relocation fast, safe, and hassle-free.
 							Trusted by families and businesses alike.
-						</p>
+						</motion.p>
 
-						{/* CTA-кнопки */}
-						<div className='grid grid-cols-2 gap-4 w-full sm:w-auto'>
+						{/* Кнопки */}
+						<motion.div
+							variants={textVariant}
+							initial='hidden'
+							animate='visible'
+							custom={4}
+							className='grid grid-cols-2 gap-4 w-full sm:w-auto'
+						>
 							<button
 								onClick={() => setModalOpen(true)}
 								className='bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition font-bold text-lg tracking-wider w-full'
@@ -120,10 +83,14 @@ const Hero = () => {
 							>
 								Our Services
 							</a>
-						</div>
+						</motion.div>
 
 						{/* Google Reviews */}
-						<a
+						<motion.a
+							variants={textVariant}
+							initial='hidden'
+							animate='visible'
+							custom={5}
 							href='https://www.google.com/'
 							target='_blank'
 							rel='noopener noreferrer'
@@ -157,13 +124,14 @@ const Hero = () => {
 									</span>
 								</div>
 							</div>
-						</a>
-					</motion.div>
+						</motion.a>
+					</div>
 					<div className='hidden md:block'></div>
 				</div>
 			</Container>
 
-			{/* Рендер модалки */}
+			<FloatingQuoteButton onOpen={() => setModalOpen(true)} />
+
 			<QuoteModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
 		</section>
 	)
