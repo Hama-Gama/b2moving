@@ -72,11 +72,15 @@ const About = () => {
 						whileHover={{ scale: 1.05, rotate: 4 }}
 						transition={{ type: 'spring', stiffness: 300 }}
 					>
-						<div className='transform rotate-[-4deg] hover:rotate-0 transition duration-500 ease-out'>
+						<div className='relative transform rotate-[-4deg] hover:rotate-0 transition duration-500 ease-out'>
+							{/* Синий фон */}
+							<div className='absolute inset-0 bg-blue-600 rounded-sm z-0 rotate-[4deg]' />
+
+							{/* Изображение поверх */}
 							<img
-								src='/gallery5.jpg'
+								src='/about.jpg'
 								alt='About MovePro'
-								className='rounded-sm shadow-2xl max-w-full h-auto'
+								className='relative z-10 rounded-sm shadow-2xl max-w-full h-auto'
 							/>
 						</div>
 					</motion.div>

@@ -6,7 +6,6 @@ import ReviewsVideo from './sections/ReviewsVideo'
 import About from './sections/About'
 import Promo from './sections/Promo'
 import Reviews from './sections/Reviews'
-import ServiceArea from './sections/ServiceArea'
 import License from './sections/License'
 import Services from './sections/Services'
 import Gallery from './sections/Gallery'
@@ -26,7 +25,7 @@ function App() {
 				<About />
 				<Promo />
 				<Reviews />
-				<ServiceArea />
+				{/* <ServiceArea /> */}
 				<License />
 				<Services />
 				<Gallery />

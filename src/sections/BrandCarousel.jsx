@@ -92,7 +92,7 @@ const InfiniteBrandCarousel = () => {
 	return (
 		<section ref={sectionRef} className='py-10 bg-white overflow-hidden'>
 			<div className='max-w-7xl mx-auto px-4'>
-				<h3 className='text-center text-gray-700 text-2xl font-bold mb-6'>
+				<h3 className='text-center text-gray-700 text-3xl font-bold mb-6'>
 					Trusted On These Platforms
 				</h3>
 
@@ -104,7 +104,7 @@ const InfiniteBrandCarousel = () => {
 								href={brand.link}
 								target='_blank'
 								rel='noopener noreferrer'
-								className='flex-shrink-0 flex items-center justify-center min-w-[120px]'
+								className='flex-shrink-0 flex items-center justify-center min-w-[120px] p-2'
 								variants={logoVariants}
 								initial='hidden'
 								whileInView='visible'
@@ -114,7 +114,8 @@ const InfiniteBrandCarousel = () => {
 								<img
 									src={brand.logo}
 									alt={brand.name}
-									className='h-16 w-auto object-contain transition-transform hover:scale-105 rounded-md'
+								
+									className='h-16 w-auto object-contain transition-transform hover:scale-105 rounded-md shadow-md'
 									draggable={false}
 								/>
 							</motion.a>

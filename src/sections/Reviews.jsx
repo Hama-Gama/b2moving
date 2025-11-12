@@ -59,7 +59,7 @@ const Reviews = () => {
 					transition={{ duration: 0.6 }}
 				>
 					<Swiper
-						modules={[ Autoplay, EffectCube]}
+						modules={[Autoplay, EffectCube]}
 						effect='cube'
 						grabCursor={true}
 						cubeEffect={{
@@ -79,12 +79,24 @@ const Reviews = () => {
 								>
 									<Card className='h-full p-6 bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 rounded-2xl pb-10'>
 										<CardContent className='flex flex-col items-center text-center space-y-4'>
+											<div className='relative w-20 h-20'>
+												{/* Синий круг позади */}
+												<div className='absolute top-[6px] top-0 w-20 h-20 bg-blue-500 rounded-full z-0 shadow-lg' />
+
+												{/* Аватар поверх */}
+												<img
+													src={review.avatar}
+													alt={review.name}
+													className='relative z-10 w-20 h-20 rounded-full object-cover shadow-lg'
+												/>
+											</div>
+
 											{/* Аватар */}
-											<img
+											{/* <img
 												src={review.avatar}
 												alt={review.name}
 												className='w-20 h-20 rounded-full object-cover shadow-md'
-											/>
+											/> */}
 
 											{/* Текст отзыва */}
 											<p className='text-gray-700 text-[15px] leading-relaxed italic'>

@@ -30,7 +30,7 @@ const SectionTitle = ({
 		<div className={`mb-10 ${alignClass} ${className}`}>
 			{subtitle && (
 				<motion.p
-					className='text-blue-600 text-base font-semibold tracking-wider uppercase mb-2'
+					className='text-blue-600 text-base font-bold tracking-wider uppercase mb-2'
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
