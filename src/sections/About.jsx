@@ -24,7 +24,7 @@ const About = () => {
 	}
 
 	return (
-		<section id='about' className='scroll-mt-24 py-16 bg-gray-50'>
+		<section id='about' className='scroll-mt-24 py-10 bg-gray-50'>
 			<Container>
 				{/* Section Title with animation */}
 				<motion.div
