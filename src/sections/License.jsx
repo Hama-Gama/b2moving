@@ -1,29 +1,45 @@
+'use client'
+
 import SectionTitle from '../components/shared/SectionTitle'
 import Container from '../components/layout/Container'
 import { motion } from 'framer-motion'
 
 const licenses = [
 	{
-		title: 'Official Moving License',
-		description: 'Certified and approved by the national moving association.',
-		icon: '/assets/icons/license1.svg',
+		title: 'Carrier ID',
+		value: 'MTR0192394',
+		icon: '/license/carrier-id.png',
+		description: 'Official registered carrier identification number.',
 	},
 	{
-		title: 'Insurance Coverage',
-		description: 'Full insurance coverage for all transported items.',
-		icon: '/assets/icons/license2.svg',
+		title: 'Cargo Policy',
+		value: '#8122019451089Y',
+		icon: '/license/cargo-policy.png',
+		description: 'Covers all transported goods under federal protection.',
 	},
 	{
-		title: 'Quality Assurance',
-		description:
-			'Adhering to the highest quality standards in relocation services.',
-		icon: '/assets/icons/license3.svg',
+		title: 'Insurance Policy',
+		value: '#504610119748001',
+		icon: '/license/insurance-policy.png',
+		description: 'Comprehensive liability and property insurance coverage.',
+	},
+	{
+		title: 'US DOT',
+		value: '3585923',
+		icon: '/license/us-dot.png',
+		description: 'Registered with the U.S. Department of Transportation.',
+	},
+	{
+		title: 'CA Permit',
+		value: '581337',
+		icon: '/license/ca-permit.png',
+		description: 'Authorized moving operations across California.',
 	},
 ]
 
 const License = () => {
 	return (
-		<section id='license' className='scroll-mt-24 py-10 bg-gray-50'>
+		<section id='license' className='scroll-mt-24 py-16 bg-gray-50'>
 			<Container>
 				<SectionTitle
 					subtitle='Certifications'
@@ -31,7 +47,7 @@ const License = () => {
 				/>
 
 				<motion.div
-					className='mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-8'
+					className='mt-12 grid sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center'
 					initial='hidden'
 					whileInView='visible'
 					viewport={{ once: true, amount: 0.3 }}
@@ -43,18 +59,29 @@ const License = () => {
 					{licenses.map((item, index) => (
 						<motion.div
 							key={index}
-							className='bg-white p-6 rounded-xl shadow hover:shadow-lg transition cursor-default text-center'
+							className='bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center max-w-[320px]'
 							variants={{
 								hidden: { opacity: 0, y: 20 },
 								visible: { opacity: 1, y: 0 },
 							}}
 						>
-							<img
-								src={item.icon}
-								alt={item.title}
-								className='w-16 h-16 mx-auto mb-4'
-							/>
-							<h3 className='text-xl font-semibold mb-2'>{item.title}</h3>
+							<div className='flex justify-center mb-4'>
+								<img
+									src={item.icon}
+									alt={item.title}
+									className='w-24 h-24 object-contain'
+								/>
+							</div>
+
+							<h3 className='text-lg font-semibold text-gray-900 mb-2'>
+								{item.title}
+							</h3>
+
+							{/* VALUE */}
+							<p className='inline-block bg-orange-300 text-white font-semibold px-4 py-1 rounded-xl mb-3 text-sm'>
+								{item.value}
+							</p>
+
 							<p className='text-gray-600 text-sm'>{item.description}</p>
 						</motion.div>
 					))}

@@ -7,7 +7,7 @@ import About from './sections/About'
 import Promo from './sections/Promo'
 import Reviews from './sections/Reviews'
 import License from './sections/License'
-import Services from './sections/Services'
+// import Services from './sections/Services'
 import Gallery from './sections/Gallery'
 import FaqSection from './sections/FaqSection'
 import Contacts from './sections/Contacts'
@@ -27,7 +27,7 @@ function App() {
 				<Reviews />
 				{/* <ServiceArea /> */}
 				<License />
-				<Services />
+				{/* <Services /> */}
 				<Gallery />
 				<FaqSection />
 				<Contacts />

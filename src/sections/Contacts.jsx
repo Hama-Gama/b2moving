@@ -89,7 +89,9 @@ const Contacts = () => {
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
 							transition={{ type: 'spring', stiffness: 250, damping: 15 }}
-							className='group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-semibold text-white rounded-md shadow-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 focus:outline-none focus:ring-2 focus:ring-blue-400'
+							className='group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-semibold text-white rounded-md shadow-lg hover:from-blue-500 hover:to-indigo-500 focus:outline-none 
+							bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700
+							focus:ring-2 focus:ring-blue-400'
 						>
 							<span className='absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300'></span>
 							<Send className='w-5 h-5 mr-2' />
