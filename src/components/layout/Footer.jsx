@@ -14,6 +14,10 @@ const Footer = () => {
 							move safe, simple, and stress-free — trusted by hundreds of
 							clients across the city.
 						</p>
+						<p className='text-gray-400 text-sm leading-relaxed'>
+							B2 Moving is licensed by the California Public Utility Commission
+							(CPUC), Carrier ID – MTR0192394
+						</p>
 					</div>
 
 					{/* Quick Links */}
@@ -88,14 +92,6 @@ const Footer = () => {
 								<Facebook size={20} />
 							</a>
 							<a
-								href='https://twitter.com'
-								target='_blank'
-								rel='noopener noreferrer'
-								className='hover:text-blue-400 transition'
-							>
-								<Twitter size={20} />
-							</a>
-							<a
 								href='https://instagram.com'
 								target='_blank'
 								rel='noopener noreferrer'
@@ -103,30 +99,22 @@ const Footer = () => {
 							>
 								<Instagram size={20} />
 							</a>
-							<a
-								href='https://linkedin.com'
-								target='_blank'
-								rel='noopener noreferrer'
-								className='hover:text-blue-400 transition'
-							>
-								<Linkedin size={20} />
-							</a>
 						</div>
 
 						<p className='text-gray-400 text-sm mt-4'>
-							123 Main Street, New York, NY 10001 <br />
+							30508 Union City Blvd, Union City, CA 94587 <br />
 							<a
-								href='tel:+1234567890'
+								href='tel:+16699995505'
 								className='hover:text-blue-500 transition'
 							>
-								+1 (234) 567-890
+								(669) 999-5505
 							</a>{' '}
 							|{' '}
 							<a
-								href='mailto:info@b2moving.com'
+								href='mailto:info@b2movingcompany.com'
 								className='hover:text-blue-500 transition'
 							>
-								info@b2moving.com
+								info@b2movingcompany.com
 							</a>
 						</p>
 
