@@ -16,6 +16,7 @@ const images = [
 	'/gallery5.jpg',
 	'/gallery6.jpg',
 	'/gallery7.jpg',
+	'/gallery8.jpg',
 ]
 
 const Gallery = () => {

@@ -12,15 +12,15 @@ import 'swiper/css/effect-cube'
 // Данные отзывов
 const reviews = [
 	{
-		name: 'John Smith',
+		name: 'Emily Smith',
 		role: 'Homeowner',
 		message:
-			'B2Moving made my move completely stress-free! The team was professional and handled everything with care.',
+			'The quality of service I received from B2 Moving Company was unparalleled. They made what is often a daunting task feel effortless. Highly recommended!',
 		avatar: '/review-1.jpg',
 		rating: 4.9,
 	},
 	{
-		name: 'Emily Johnson',
+		name: 'Kate Johnson',
 		role: 'Office Manager',
 		message:
 			'Our office relocation was smooth and fast thanks to B2Moving. Highly recommend their services!',
@@ -32,16 +32,24 @@ const reviews = [
 		role: 'Entrepreneur',
 		message:
 			'Great team, punctual and efficient. They handled all our items carefully and professionally.',
-		avatar: '/review-1.jpg',
+		avatar: '/review-3.jpg',
 		rating: 4.8,
 	},
 	{
-		name: 'Sarah Lee',
+		name: 'Simon Dewalt',
 		role: 'Interior Designer',
 		message:
 			'They made my moving experience feel effortless. Excellent coordination and support throughout!',
-		avatar: '/review-2.jpg',
+		avatar: '/review-4.jpg',
 		rating: 4.9,
+	},
+	{
+		name: 'Laura Wilson',
+		role: 'Freelancer',
+		message:
+			'B2 Moving Company exceeded my expectations in every way. Their team was friendly, efficient, and took great care of my belongings.',
+		avatar: '/review-5.jpg',
+		rating: 4.8,
 	},
 ]
 
