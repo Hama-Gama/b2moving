@@ -43,7 +43,7 @@ const Contacts = () => {
 						<div className='flex items-start'>
 							<MapPin className='w-5 h-5 text-gray-700 mr-2 opacity-70 mt-1' />
 							<div className='font-normal'>
-								30508 Union City Blvd, Union City, CA 94587
+								30508 Union City Blvd, CA 94587
 							</div>
 						</div>
 
