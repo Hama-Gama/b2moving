@@ -15,6 +15,11 @@ const brands = [
 		link: 'https://www.thumbtack.com',
 	},
 	{
+		name: 'Yelp',
+		logo: '/yelp.png',
+		link: 'https://www.yelp.com',
+	},
+	{
 		name: 'HomeAdvisor',
 		logo: '/home-adviser.png',
 		link: 'https://www.homeadvisor.com',

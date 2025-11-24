@@ -2,9 +2,9 @@ import { Button } from '@/components/ui/button'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import Hero from './sections/Hero'
-import ReviewsVideo from './sections/ReviewsVideo'
+// import ReviewsVideo from './sections/ReviewsVideo'
 import About from './sections/About'
-import Promo from './sections/Promo'
+// import Promo from './sections/Promo'
 import Reviews from './sections/Reviews'
 import License from './sections/License'
 // import Services from './sections/Services'
@@ -21,9 +21,9 @@ function App() {
 			<main>
         <Hero />
 				<BrandCarousel />
-				<ReviewsVideo />
+				{/* <ReviewsVideo /> */}
 				<About />
-				<Promo />
+				{/* <Promo /> */}
 				<Reviews />
 				{/* <ServiceArea /> */}
 				<License />

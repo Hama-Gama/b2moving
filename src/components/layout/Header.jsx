@@ -60,7 +60,7 @@ const Header = () => {
 							isScrolled ? 'text-gray-900' : 'text-white drop-shadow-lg'
 						}`}
 					>
-						B2Moving
+						B2MOVING
 					</motion.a>
 
 					{/* Desktop Navigation */}

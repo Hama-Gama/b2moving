@@ -58,7 +58,7 @@ const Gallery = () => {
 								scale: 0.8,
 							},
 						}}
-						className='rounded-2xl shadow-xl'
+						className='rounded-2xl shadow-xl max-w-[700px] mx-auto'
 					>
 						{images.map((src, index) => (
 							<SwiperSlide key={index}>

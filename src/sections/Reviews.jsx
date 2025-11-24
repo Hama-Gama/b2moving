@@ -15,7 +15,7 @@ const reviews = [
 		name: 'Emily Smith',
 		role: 'Homeowner',
 		message:
-			'The quality of service I received from B2 Moving Company was unparalleled. They made what is often a daunting task feel effortless. Highly recommended!',
+			'The quality of service I received from B2 Moving Company was unparalleled. Highly recommended!',
 		avatar: '/review-1.jpg',
 		rating: 4.9,
 	},
