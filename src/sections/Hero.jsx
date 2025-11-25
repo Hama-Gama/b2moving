@@ -3,8 +3,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Container from '../components/layout/Container'
-import FloatingQuoteButton from '../components/layout/FloatingQuoteButton.jsx'
-import QuoteModal from '../components/layout/QuoteModal'
 import { useQuoteModal } from '../context/QuoteModalContext'
 
 const textVariant = {
@@ -21,7 +19,6 @@ const textVariant = {
 }
 
 const Hero = () => {
-	const [modalOpen, setModalOpen] = useState(false)
 	const { openModal } = useQuoteModal()
 
 	return (
@@ -59,7 +56,7 @@ const Hero = () => {
 							initial='hidden'
 							animate='visible'
 							custom={3}
-							className='text-lg md:text-xl text-gray-200 max-w-md'
+							className='text-lg md:text-xl text-gray-200 max-w-[550px] drop-shadow-lg'
 						>
 							B2Moving makes your relocation fast, safe, and hassle-free.
 							Trusted by families and businesses alike.

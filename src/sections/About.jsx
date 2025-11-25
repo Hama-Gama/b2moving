@@ -49,17 +49,17 @@ const About = () => {
 						className='space-y-6 text-gray-700'
 						variants={itemVariants}
 					>
-						<p className='text-base font-medium leading-relaxed'>
+						<p className='text-lg font-medium'>
 							B2Moving is a professional moving company dedicated to providing a
 							smooth, stress-free relocation experience for both homes and
 							offices.
 						</p>
-						<p className='text-base font-medium leading-relaxed'>
+						<p className='text-lg font-medium'>
 							With years of experience, we take pride in offering reliable
 							services, modern equipment, and skilled staff to make your move
 							quick and efficient.
 						</p>
-						<p className='text-base font-medium leading-relaxed'>
+						<p className='text-lg font-medium'>
 							Whether it’s a small apartment or a large office, B2Moving is
 							ready to provide tailored solutions to meet your needs.
 						</p>

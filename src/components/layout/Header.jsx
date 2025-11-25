@@ -11,14 +11,15 @@ const Header = () => {
 
 	const navLinks = [
 		{ id: 'about', label: 'About' },
-		{ id: 'services', label: 'Services' },
 		{ id: 'gallery', label: 'Gallery' },
 		{ id: 'license', label: 'License' },
-		{ id: 'promo', label: 'Video' },
-		{ id: 'reviews-video', label: 'Reviews' },
-		{ id: 'service-area', label: 'Service Area' },
+		{ id: 'reviews', label: 'Reviews' },
 		{ id: 'faq', label: 'FAQ' },
 		{ id: 'contacts', label: 'Contacts' },
+		// { id: 'services', label: 'Services' },
+		// { id: 'service-area', label: 'Service Area' },
+		// { id: 'reviews-video', label: 'Reviews' },
+		// { id: 'promo', label: 'Video' },
 	]
 
 	// отслеживаем скролл

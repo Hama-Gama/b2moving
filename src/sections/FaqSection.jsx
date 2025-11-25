@@ -6,7 +6,7 @@ import { ChevronDown, ChevronUp } from 'lucide-react'
 
 const faqData = [
 	{
-		question: 'What services does B2MOVING offer?',
+		question: 'What services does B2Moving offer?',
 		answer:
 			'We provide home and office moving services, packing and unpacking, furniture assembly, and storage solutions tailored to your needs.',
 	},
