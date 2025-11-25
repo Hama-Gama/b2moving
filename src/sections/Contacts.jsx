@@ -136,7 +136,7 @@ const Contacts = () => {
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
 							transition={{ type: 'spring', stiffness: 250, damping: 15 }}
-							className='group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-semibold text-white rounded-md shadow-lg 
+							className='group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-semibold text-white rounded-full shadow-lg 
 							bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700
 							focus:outline-none focus:ring-2 focus:ring-blue-400'
 						>

@@ -75,13 +75,13 @@ const Hero = () => {
 						>
 							<button
 								onClick={openModal}
-								className='bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition font-bold text-lg tracking-wider w-full'
+								className='bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition font-bold text-lg tracking-wider w-full'
 							>
 								Get a Quote
 							</button>
 							<a
 								href='#services'
-								className='text-center bg-white/20 text-white px-6 py-3 rounded-md hover:bg-white/30 transition font-bold text-lg tracking-wider w-full'
+								className='text-center bg-white/20 text-white px-6 py-3 rounded-full hover:bg-white/30 transition font-bold text-lg tracking-wider w-full'
 							>
 								Our Services
 							</a>
@@ -96,7 +96,7 @@ const Hero = () => {
 							href='https://www.google.com/search?q=B2+Moving+Company+Отзывы#lrd=0x808fc7ced3d65939:0xb7b0a0d4f2ec23fe,1'
 							target='_blank'
 							rel='noopener noreferrer'
-							className='mt-6 flex items-center justify-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-4 rounded-lg hover:bg-white/20 transition-all w-full sm:w-auto'
+							className='mt-6 flex items-center justify-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-4 rounded-full hover:bg-white/20 transition-all w-full sm:w-auto'
 						>
 							<img
 								src='/hero-google.png'

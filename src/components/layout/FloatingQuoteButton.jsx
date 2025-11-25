@@ -40,7 +40,7 @@ const FloatingQuoteButton = ({ onOpen }) => {
 						size='lg'
 						className='w-full sm:w-auto bg-gradient-to-r from-blue-500 via-blue-600 
                         to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-black 
-                        tracking-wide text-lg py-6 sm:py-5 rounded-lg sm:rounded-full 
+                        tracking-wide text-lg py-6 sm:py-5 rounded-full sm:rounded-full 
                         shadow-xl transition-all duration-300 active:scale-[0.98]'
 					>
 						GET A FREE QUOTE

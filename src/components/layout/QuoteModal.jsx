@@ -80,8 +80,8 @@ const QuoteModal = () => {
 
 					<button
 						type='submit'
-						className='w-full bg-blue-600 text-white py-2 rounded-md 
-							hover:bg-blue-700 transition font-bold'
+						className='w-full bg-black text-white py-2 rounded-full 
+							hover:bg-gray-600 transition font-bold'
 					>
 						Get a Quote Now
 					</button>
