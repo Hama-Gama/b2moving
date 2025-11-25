@@ -3,8 +3,9 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Container from '../components/layout/Container'
-import FloatingQuoteButton from '../components/layout/FloatingQuoteButton'
+import FloatingQuoteButton from '../components/layout/FloatingQuoteButton.jsx'
 import QuoteModal from '../components/layout/QuoteModal'
+import { useQuoteModal } from '../context/QuoteModalContext'
 
 const textVariant = {
 	hidden: { opacity: 0, y: 30 },
@@ -21,6 +22,7 @@ const textVariant = {
 
 const Hero = () => {
 	const [modalOpen, setModalOpen] = useState(false)
+	const { openModal } = useQuoteModal()
 
 	return (
 		<section
@@ -72,7 +74,7 @@ const Hero = () => {
 							className='grid grid-cols-2 gap-4 w-full sm:w-auto'
 						>
 							<button
-								onClick={() => setModalOpen(true)}
+								onClick={openModal}
 								className='bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition font-bold text-lg tracking-wider w-full'
 							>
 								Get a Quote
@@ -129,10 +131,6 @@ const Hero = () => {
 					<div className='hidden md:block'></div>
 				</div>
 			</Container>
-
-			<FloatingQuoteButton onOpen={() => setModalOpen(true)} />
-
-			<QuoteModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
 		</section>
 	)
 }

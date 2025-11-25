@@ -51,19 +51,19 @@ const Footer = () => {
 									Reviews
 								</a>
 							</li>
-							<li>
+							{/* <li>
 								<a
 									href='#reviews-video'
 									className='hover:text-blue-500 transition'
 								>
 									Video Reviews
 								</a>
-							</li>
-							<li>
+							</li> */}
+							{/* <li>
 								<a href='#promo' className='hover:text-blue-500 transition'>
 									Promo
 								</a>
-							</li>
+							</li> */}
 							<li>
 								<a href='#faq' className='hover:text-blue-500 transition'>
 									FAQ

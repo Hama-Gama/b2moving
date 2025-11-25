@@ -2,40 +2,44 @@ import { Button } from '@/components/ui/button'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import Hero from './sections/Hero'
-// import ReviewsVideo from './sections/ReviewsVideo'
 import About from './sections/About'
-// import Promo from './sections/Promo'
 import Reviews from './sections/Reviews'
 import License from './sections/License'
-// import Services from './sections/Services'
 import Gallery from './sections/Gallery'
 import FaqSection from './sections/FaqSection'
 import Contacts from './sections/Contacts'
 import FloatingQuoteButton from './components/layout/FloatingQuoteButton'
 import BrandCarousel from './sections/BrandCarousel'
+import { QuoteModalProvider } from './context/QuoteModalContext'
+import QuoteModal from './components/layout/QuoteModal'
+// import ReviewsVideo from './sections/ReviewsVideo'
+// import Promo from './sections/Promo'
+// import Services from './sections/Services'
 
 function App() {
 	return (
 		<div>
+			<QuoteModalProvider >
       <Header />
 			<main>
         <Hero />
 				<BrandCarousel />
-				{/* <ReviewsVideo /> */}
 				<About />
-				{/* <Promo /> */}
 				<Reviews />
-				{/* <ServiceArea /> */}
 				<License />
-				{/* <Services /> */}
 				<Gallery />
 				<FaqSection />
 				<Contacts />
+				{/* <ReviewsVideo /> */}
+				{/* <Promo /> */}
+				{/* <ServiceArea /> */}
+				{/* <Services /> */}
 			</main>
 			<Footer />
 			<FloatingQuoteButton />
+		  	<QuoteModal />
+			</QuoteModalProvider>
 		</div>
-	
 	)
 }
 
