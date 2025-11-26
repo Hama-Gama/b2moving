@@ -1,10 +1,12 @@
 import { ExternalLink } from 'lucide-react'
 import Container from './Container'
+import { section } from 'motion/react-client'
 
 const TopMoverBadge = () => {
 	return (
+		<section className='py-10 bg-gray-50'>
 		<Container>
-			<div className='flex flex-col md:flex-row items-center gap-6 bg-white p-6 rounded-2xl shadow-md border'>
+			<div className='max-w-[700px] flex flex-col md:flex-row items-center gap-6 bg-white p-6 rounded-2xl shadow-md border m-auto'>
 				{/* Badge image */}
 				<img
 					src='/localmovers.png'
@@ -34,6 +36,7 @@ const TopMoverBadge = () => {
 				</div>
 			</div>
 		</Container>
+		</section>
 	)
 }
 
