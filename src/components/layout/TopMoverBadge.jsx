@@ -18,8 +18,10 @@ const TopMoverBadge = () => {
 					<div className='text-center max-w-xl'>
 						<p className='text-gray-700 text-lg leading-relaxed'>
 							Delivering efficient and professional moving services across Bay
-							Area, B2 Moving Company is honored to be recognized as a Top Mover
-							by:
+							Area,
+							<br />
+							<span className='font-semibold'>B2 Moving Company</span> is
+							honored to be recognized as a Top Mover by:
 						</p>
 
 						{/* Ссылка на всю строку, по центру */}
