@@ -12,6 +12,7 @@ import FloatingQuoteButton from './components/layout/FloatingQuoteButton'
 import BrandCarousel from './sections/BrandCarousel'
 import { QuoteModalProvider } from './context/QuoteModalContext'
 import QuoteModal from './components/layout/QuoteModal'
+import TopMoverBadge from './components/layout/TopMoverBadge'
 // import ReviewsVideo from './sections/ReviewsVideo'
 // import Promo from './sections/Promo'
 // import Services from './sections/Services'
@@ -24,6 +25,7 @@ function App() {
 			<main>
         <Hero />
 				<BrandCarousel />
+				<TopMoverBadge />
 				<About />
 				<Reviews />
 				<License />

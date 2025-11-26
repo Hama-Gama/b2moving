@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { Send, MapPin, Phone, AtSign, Clock, Copy } from 'lucide-react'
 import { useState } from 'react'
 
+
 const Contacts = () => {
 	const [copied, setCopied] = useState(false)
 	const email = 'info@b2movingcompany.com'
@@ -46,6 +47,11 @@ const Contacts = () => {
 								30508 Union City Blvd, CA 94587
 							</div>
 						</div>
+
+
+
+
+						
 
 						{/* Phone */}
 						<div className='flex items-start'>

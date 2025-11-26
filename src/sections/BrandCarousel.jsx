@@ -25,18 +25,8 @@ const brands = [
 		link: 'https://www.homeadvisor.com',
 	},
 	{
-		name: 'Top Mover',
-		logo: '/top-mover.jpg',
-		link: 'https://www.facebook.com',
-	},
-	{
 		name: 'Elite Service',
 		logo: '/elite-service.jpeg',
-		link: 'https://www.facebook.com',
-	},
-	{
-		name: 'Top Ten',
-		logo: '/top-ten.jpg',
 		link: 'https://www.facebook.com',
 	},
 ]

@@ -1,0 +1,40 @@
+import { ExternalLink } from 'lucide-react'
+import Container from './Container'
+
+const TopMoverBadge = () => {
+	return (
+		<Container>
+			<div className='flex flex-col md:flex-row items-center gap-6 bg-white p-6 rounded-2xl shadow-md border'>
+				{/* Badge image */}
+				<img
+					src='/localmovers.png'
+					alt='Local Movers Badge'
+					className='object-contain h-50 w-auto'
+				/>
+
+				{/* Text */}
+				<div className='text-center max-w-xl'>
+					<p className='text-gray-700 text-lg leading-relaxed'>
+						Delivering efficient and professional moving services across Los
+						Angeles, B1 Moving Company is honored to be recognized as a Top
+						Mover by:
+					</p>
+
+					{/* Ссылка на всю строку, по центру */}
+					<a
+						href='https://localmovers.com/movers-in-los-angeles'
+						target='_blank'
+						rel='noopener noreferrer'
+						className='text-xl mt-2 w-full flex justify-center items-center gap-2 
+                   text-blue-600 font-semibold underline hover:text-blue-800'
+					>
+						LocalMovers.com
+						<ExternalLink className='w-4 h-4 opacity-70' />
+					</a>
+				</div>
+			</div>
+		</Container>
+	)
+}
+
+export default TopMoverBadge
