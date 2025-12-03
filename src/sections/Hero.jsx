@@ -90,7 +90,7 @@ const Hero = () => {
 							initial='hidden'
 							animate='visible'
 							custom={5}
-							href='https://www.google.com/search?q=B2+Moving+Company+Отзывы#lrd=0x808fc7ced3d65939:0xb7b0a0d4f2ec23fe,1'
+							href='https://www.google.com/search?q=B2+Moving+Company&hl=en#lrd=0x808fc7ced3d65939:0xb7b0a0d4f2ec23fe,1'
 							target='_blank'
 							rel='noopener noreferrer'
 							className='mt-6 flex items-center justify-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-4 rounded-full hover:bg-white/20 transition-all w-full sm:w-auto'
