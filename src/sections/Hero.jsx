@@ -58,7 +58,7 @@ const Hero = () => {
 							custom={3}
 							className='text-lg md:text-xl text-gray-200 max-w-[550px] drop-shadow-lg'
 						>
-							B2Moving makes your relocation fast, safe, and hassle-free.
+							B2 Moving makes your relocation fast, safe, and hassle-free.
 							Trusted by families and businesses alike.
 						</motion.p>
 

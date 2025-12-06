@@ -23,7 +23,7 @@ const reviews = [
 		name: 'Kate Johnson',
 		role: 'Office Manager',
 		message:
-			'Our office relocation was smooth and fast thanks to B2Moving. Highly recommend their services!',
+			'Our office relocation was smooth and fast thanks to B2 Moving. Highly recommend their services!',
 		avatar: '/review-2.jpg',
 		rating: 5.0,
 	},

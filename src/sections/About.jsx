@@ -50,7 +50,7 @@ const About = () => {
 						variants={itemVariants}
 					>
 						<p className='text-lg font-medium'>
-							B2Moving is a professional moving company dedicated to providing a
+							B2 Moving is a professional moving company dedicated to providing a
 							smooth, stress-free relocation experience for both homes and
 							offices.
 						</p>
@@ -60,7 +60,7 @@ const About = () => {
 							quick and efficient.
 						</p>
 						<p className='text-lg font-medium'>
-							Whether it’s a small apartment or a large office, B2Moving is
+							Whether it’s a small apartment or a large office, B2 Moving is
 							ready to provide tailored solutions to meet your needs.
 						</p>
 					</motion.div>
