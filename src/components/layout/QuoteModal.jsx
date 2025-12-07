@@ -25,7 +25,7 @@ const QuoteModal = () => {
 			>
 				{/* HEADER */}
 				<div className='flex justify-between items-center p-4 border-b'>
-					<h2 className='text-2xl font-bold'>Get a Quote</h2>
+					{/* <h2 className='text-2xl font-bold'>Get a Quote</h2> */}
 					<button
 						onClick={closeModal}
 						className='text-gray-600 hover:text-black text-2xl leading-none'
