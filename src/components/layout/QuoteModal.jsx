@@ -1,10 +1,9 @@
 import { useEffect } from 'react'
-import { useQuoteModal } from '../../context/QuoteModalContext' // путь подстрой под проект
+import { useQuoteModal } from '../../context/QuoteModalContext'
 
 const QuoteModal = () => {
 	const { isOpen, closeModal } = useQuoteModal()
 
-	// Блокируем скролл
 	useEffect(() => {
 		document.body.style.overflow = isOpen ? 'hidden' : ''
 		return () => {
@@ -16,76 +15,35 @@ const QuoteModal = () => {
 
 	return (
 		<>
-			{/* Фон */}
-			<div
-				className='fixed inset-0 bg-black/50 z-40'
-				onClick={closeModal}
-			></div>
+			{/* ЗАДНИЙ ФОН */}
+			<div className='fixed inset-0 bg-black/50 z-40' onClick={closeModal} />
 
-			{/* Модалка */}
+			{/* МОДАЛКА */}
 			<div
-				className='fixed top-1/2 left-1/2 z-50 w-11/12 max-w-lg 
-				-translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg p-6'
+				className='fixed top-1/2 left-1/2 z-50 w-11/12 max-w-3xl
+				-translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-xl p-0 overflow-hidden'
 			>
-				<h2 className='text-2xl font-bold mb-4'>Get a Quote</h2>
-
-				<form className='space-y-4'>
-					<input
-						type='text'
-						placeholder='Full Name'
-						className='w-full border rounded-md px-3 py-2'
-						required
-					/>
-					<input
-						type='email'
-						placeholder='Email'
-						className='w-full border rounded-md px-3 py-2'
-						required
-					/>
-					<input
-						type='tel'
-						placeholder='Phone'
-						className='w-full border rounded-md px-3 py-2'
-						required
-					/>
-					<input
-						type='date'
-						placeholder='Move Date'
-						className='w-full border rounded-md px-3 py-2'
-						required
-					/>
-
-					<div className='grid grid-cols-2 gap-2'>
-						<input
-							type='text'
-							placeholder='Pick Up Zip'
-							className='w-full border rounded-md px-3 py-2'
-							required
-						/>
-						<input
-							type='text'
-							placeholder='Drop Off Zip'
-							className='w-full border rounded-md px-3 py-2'
-							required
-						/>
-					</div>
-
-					<select className='w-full border rounded-md px-3 py-2' required>
-						<option value=''>Select your move size</option>
-						<option value='studio'>Studio / 1 Bedroom</option>
-						<option value='2bed'>2 Bedrooms</option>
-						<option value='3bed'>3 Bedrooms</option>
-						<option value='4plus'>4+ Bedrooms</option>
-					</select>
-
+				{/* HEADER */}
+				<div className='flex justify-between items-center p-4 border-b'>
+					<h2 className='text-2xl font-bold'>Get a Quote</h2>
 					<button
-						type='submit'
-						className='w-full bg-black text-white py-2 rounded-full 
-							hover:bg-gray-600 transition font-bold'
+						onClick={closeModal}
+						className='text-gray-600 hover:text-black text-2xl leading-none'
 					>
-						Get a Quote Now
+						×
 					</button>
-				</form>
+				</div>
+
+				{/* ВСТРОЕННАЯ ФОРМА */}
+				<iframe
+					frameBorder='0'
+					src='https://portal.smartmoving.com/embedded/?companyId=8c9490dc-49d9-4b54-bf5d-afee01634264&branchId=0a697e5d-cdf3-4d8a-a202-afee01634324&mode=short'
+					style={{
+						width: '100%',
+						height: '600px',
+						border: 0,
+					}}
+				></iframe>
 			</div>
 		</>
 	)
