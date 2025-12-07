@@ -72,10 +72,18 @@ const Hero = () => {
 						>
 							<button
 								onClick={openModal}
-								className='bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition font-bold text-lg tracking-wider w-full'
+								className='
+		bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700
+		hover:from-blue-600 hover:to-blue-800
+		text-white px-6 py-3 rounded-full 
+		font-bold text-lg tracking-wider 
+		w-full transition-all duration-300
+		shadow-xl active:scale-[0.98]
+	'
 							>
 								Get a Quote
 							</button>
+
 							<a
 								href='#services'
 								className='text-center bg-white/20 text-white px-6 py-3 rounded-full hover:bg-white/30 transition font-bold text-lg tracking-wider w-full'

@@ -16,12 +16,15 @@ const QuoteModal = () => {
 	return (
 		<>
 			{/* ЗАДНИЙ ФОН */}
-			<div className='fixed inset-0 bg-black/50 z-40' onClick={closeModal} />
+			<div
+				className='fixed inset-0 bg-black/50 backdrop-blur-sm z-50'
+				onClick={closeModal}
+			/>
 
 			{/* МОДАЛКА */}
 			<div
-				className='fixed top-1/2 left-1/2 z-50 w-11/12 max-w-3xl
-				-translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-xl p-0 overflow-hidden'
+				className='fixed top-1/2 left-1/2 z-60 w-11/12 max-w-3xl
+	-translate-x-1/2 -translate-y-1/2 bg-white rounded-xl shadow-xl p-0 overflow-hidden'
 			>
 				{/* HEADER */}
 				<div className='flex justify-between items-center p-4 border-b'>
