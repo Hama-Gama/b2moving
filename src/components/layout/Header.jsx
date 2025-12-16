@@ -57,11 +57,15 @@ const Header = () => {
 							type: 'spring',
 							stiffness: 100,
 						}}
-						className={`text-3xl font-black tracking-wider transition-all duration-300 ${
-							isScrolled ? 'text-gray-900' : 'text-white drop-shadow-lg'
-						}`}
+						className='flex items-center'
 					>
-						B2 MOVING
+						<img
+							src='/logo.png'
+							alt='B2 Moving Logo'
+							className={`h-20 w-auto transition-all duration-300 ${
+								isScrolled ? 'brightness-0' : 'drop-shadow-lg'
+							}`}
+						/>
 					</motion.a>
 
 					{/* Desktop Navigation */}
