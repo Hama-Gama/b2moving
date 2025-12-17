@@ -8,7 +8,7 @@ const Footer = () => {
 				<div className='grid md:grid-cols-3 gap-8'>
 					{/* About / Logo */}
 					<div className='space-y-4'>
-						<h3 className='text-xl font-bold text-white'>B2 Moving</h3>
+						<img src='/logo.png' alt='B2 Moving' className='h-20 w-auto' />
 						<p className='text-gray-400 text-sm leading-relaxed'>
 							Professional moving services for homes and offices. We make every
 							move safe, simple, and stress-free — trusted by hundreds of
