@@ -26,7 +26,7 @@ const TopMoverBadge = () => {
 
 						{/* Ссылка на всю строку, по центру */}
 						<a
-							href='https://localmovers.com/movers-in-los-angeles'
+							href='https://www.localmovers.com/movers-in-santa-clara'
 							target='_blank'
 							rel='noopener noreferrer'
 							className='text-xl mt-2 w-full flex justify-center items-center gap-2 
